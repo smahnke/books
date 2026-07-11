@@ -1,0 +1,33 @@
+.navbar{
+    display:flex;
+    flex-wrap: nowrap;
+    align-items:center;
+    justify-content: flex-end;
+
+    background:var(--dark-green);
+
+    padding:20px 50px;
+
+    list-style:none;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+    list-style: none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+
+    font-family:"Bebas Neue", sans-serif;
+    font-size:1.5rem;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}

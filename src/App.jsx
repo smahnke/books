@@ -1,8 +1,23 @@
 import { AllBooks } from "./components/AllBooks"
 import "./App.css"
+import {Routes, Outlet, Route} from "react-router-dom"
+import { NavBar } from "./components/Nav/NavBar"
 
 export const App = () => {
   return (
-    <AllBooks/>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <NavBar/>
+            <Outlet/>
+          </>
+        }
+    >
+        <Route index element={<AllBooks/>}>
+        </Route>
+      </Route>
+    </Routes>
   )
 }
