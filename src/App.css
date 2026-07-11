@@ -95,7 +95,7 @@ body {
 .search-bar{
 
     display:flex;
-    justify-content:center;
+    justify-content:right;
 
     margin-bottom:40px;
 }
