@@ -1,15 +1,18 @@
-export const Book = ({book}) => {
+import "./book.css"
+
+export const Book = ({ book }) => {
     return (
-        <div className="books-container">
-            <div>
-                <article className="book-card">
-                    <h3>Book {book.id}</h3>
-                    <p className="book-detail">
-                        {book.title}
-                        {book.author}
-                    </p>
-                </article>
-            </div>
-        </div>
+        <article className="book-card">
+            <img
+                className="book-image"
+                src={book.image}
+                alt={book.title}
+                referrerPolicy="no-referrer"
+            />
+
+            <h2 className="book-title">{book.title}</h2>
+
+            <p className="book-author">{book.author}</p>
+        </article>
     )
 }

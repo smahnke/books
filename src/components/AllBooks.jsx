@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import { getAllBooks } from "../services/bookService"
+import { Book } from "../books/book"
 
 export const AllBooks = () => {
     const [books, setBooks] = useState([])
@@ -14,11 +15,11 @@ export const AllBooks = () => {
         <div className="app-container">
             <h1 className="page-title">BOOKS</h1>
 
-                <div className="books-header">
+                <div>
                     <h2>All Books</h2>
-                    <div className="books-container">
-                        {books.map((book) => (
-                            <li key={book.id}>{book.title}</li>
+                    <div className="book-grid">
+                    {books.map((bookObj) => (
+                        <Book key={bookObj.id} book={bookObj} />
                         ))}
                     </div>
                 </div>
