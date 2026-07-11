@@ -77,6 +77,20 @@ body {
     letter-spacing:3px;
 }
 
+.page-header{
+
+    font-family:"Bebas Neue", sans-serif;
+    font-size:2rem;
+
+    color:var(--dark-green);
+
+    text-align:left;
+
+    margin-bottom:40px;
+
+    letter-spacing:3px;
+}
+
 /*Search bar */
 .search-bar{
 

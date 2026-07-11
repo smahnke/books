@@ -16,7 +16,7 @@ export const AllBooks = () => {
             <h1 className="page-title">BOOKS</h1>
 
                 <div>
-                    <h2>All Books</h2>
+                    <h2 className="page-header">All Books</h2>
                     <div className="book-grid">
                     {books.map((bookObj) => (
                         <Book key={bookObj.id} book={bookObj} />
