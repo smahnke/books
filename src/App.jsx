@@ -3,6 +3,7 @@ import "./App.css"
 import {Routes, Outlet, Route} from "react-router-dom"
 import { NavBar } from "./components/Nav/NavBar"
 import { MyBooks } from "./components/MyBooks"
+import { BookDetails } from "./books/bookDetails"
 
 export const App = () => {
   return (
@@ -18,8 +19,10 @@ export const App = () => {
     >
         <Route index element={<AllBooks/>}>
         </Route>
+          <Route path="book/:id" element={<BookDetails />} />
         <Route path="mybooks" element={<MyBooks/>}/>
-      </Route>
+        </Route>
+
     </Routes>
   )
 }

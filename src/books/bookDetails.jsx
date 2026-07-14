@@ -18,21 +18,23 @@ export const BookDetails = () => {
                 <div className="book-left">
                     <img
                         className="detail-image"
-                        src={book?.image}
-                        alt={book?.title}
+                        src={book.image}
+                        alt={book.title}
                     />
 
-                    <h2>{book?.title}</h2>
-                    <p>{book?.author}</p>
-                    <p>{book.owner?.name}</p>
+                    <div className="book-meta">
+                        <h2>{book.title}</h2>
+                        <p>Author: {book.author}</p>
+                        <p>Owner ID: {book.ownerId}</p>
+                    </div>
                 </div>
 
                 <div className="book-right">
                     <div className="rating-box">
                         {book.ratings?.map(rating => (
-                        <p key={rating.id}>
-                        ⭐ {rating.value}
-                        </p>
+                            <p key={rating.id}>
+                                ⭐ {rating.rating}/5
+                            </p>
                         ))}
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import "./book.css"
+import {Link} from "react-router-dom"
 
 export const Book = ({ book }) => {
     const avgRating = book.ratings.length > 0
@@ -6,11 +7,13 @@ export const Book = ({ book }) => {
         : "No ratings"
 
     return (
-        <article className="book-card">
-            <img className="book-image" src={book.image} alt={book.title} />
-            <h2 className="book-title">{book.title}</h2>
-            <p className="book-author">{book.author}</p>
-            <p className="rating">Rating: {avgRating}</p>
-        </article>
+        <Link to={`/book/${book.id}`} className="book-link">
+            <article className="book-card">
+                <img className="book-image" src={book.image} alt={book.title} />
+                <h2 className="book-title">{book.title}</h2>
+                <p className="book-author">{book.author}</p>
+                <p className="rating">Rating: {avgRating}</p>
+            </article>
+        </Link>
     )
 }
