@@ -25,7 +25,7 @@ export const BookDetails = () => {
                     <div className="book-meta">
                         <h2>{book.title}</h2>
                         <p>Author: {book.author}</p>
-                        <p>Owner ID: {book.ownerId}</p>
+                        <p>Owner: {book.user?.name}</p>
                     </div>
                 </div>
 
@@ -34,6 +34,7 @@ export const BookDetails = () => {
                         {book.ratings?.map(rating => (
                             <p key={rating.id}>
                                 ⭐ {rating.rating}/5
+                                - {rating.user?.name}
                             </p>
                         ))}
                     </div>

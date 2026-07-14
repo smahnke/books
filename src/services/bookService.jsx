@@ -9,6 +9,6 @@ export const getMyBooks = (userId) => {
 }
 
 export const getBookById = (id) => {
-    return fetch(`http://localhost:8088/books/${id}?_expand=owner&_embed=ratings`)
+    return fetch(`http://localhost:8088/books/${id}?_expand=user&_embed=ratings`)
         .then(res=>res.json())
 }
