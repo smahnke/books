@@ -7,3 +7,8 @@ export const getMyBooks = (userId) => {
     return fetch(`http://localhost:8088/books?ownerId=${userId}&_embed=ratings`)
         .then(res => res.json())
 }
+
+export const getBookById = (id) => {
+    return fetch(`http://localhost:8088/books/${id}?_expand=owner&_embed=ratings`)
+        .then(res=>res.json())
+}

@@ -1,0 +1,84 @@
+.book-detail-page{
+    max-width:1200px;
+    margin:40px auto;
+    padding:40px;
+}
+
+.book-detail-card{
+    border:3px solid #1f1f1f;
+    background:white;
+    padding:40px;
+
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:50px;
+}
+
+/* Left Side */
+.book-left{
+    display:flex;
+    flex-direction:column;
+}
+
+.detail-image{
+    width:180px;
+    height:250px;
+    object-fit:cover;
+    border:2px solid #222;
+}
+
+.book-meta{
+    margin-top:25px;
+}
+
+.book-meta h2{
+    margin-bottom:12px;
+}
+
+.book-meta p{
+    margin:10px 0;
+}
+
+/* Rating drop-down */
+.rating-select{
+    margin-top:25px;
+    width:220px;
+    padding:10px;
+    font-size:1rem;
+}
+
+/* Right side */
+.book-right{
+    display:flex;
+    flex-direction:column;
+}
+
+.rating-box{
+    border:2px solid #222;
+    padding:25px;
+    min-height:250px;
+}
+
+.rating-box h3{
+    margin-bottom:20px;
+}
+
+.rating-item{
+    padding:10px 0;
+    border-bottom:1px solid #ddd;
+}
+
+/* Save button */
+.save-btn{
+    margin-top:30px;
+    margin-left:auto;
+
+    background:#2d5b48;
+    color:white;
+
+    border:none;
+    padding:12px 30px;
+    border-radius:6px;
+
+    cursor:pointer;
+}
