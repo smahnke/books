@@ -1,27 +1,22 @@
-import { AllBooks } from "./components/AllBooks"
 import "./App.css"
 import {Routes, Outlet, Route} from "react-router-dom"
-import { NavBar } from "./components/Nav/NavBar"
-import { MyBooks } from "./components/MyBooks"
-import { BookDetails } from "./books/bookDetails"
+import { Login } from "./components/auth/Login"
+import { Register } from "./components/auth/Register"
+import { Authorized } from "./views/Authorized"
+import { ApplicationViews } from "./views/ApplicationViews"
 
 export const App = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <NavBar/>
-            <Outlet/>
-          </>
-        }
-    >
-        <Route index element={<AllBooks/>}>
-        </Route>
-          <Route path="book/:id" element={<BookDetails />} />
-        <Route path="mybooks" element={<MyBooks/>}/>
-        </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/Register" element={<Register />} />
+
+      <Route path="*" element={
+        //Check if user is authorized first
+        <Authorized>
+          <ApplicationViews />
+        </Authorized>
+      }/>
 
     </Routes>
   )

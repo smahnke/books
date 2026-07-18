@@ -7,7 +7,7 @@ export const MyBooks = () => {
 
     const handleDelete = (id) => {
         const bookToDelete = myBooks.find(book => book.id === id)
-        if (!bookToDelete || bookToDelete.ownerId !== 1) return // guard: only allow deleting your own
+        if (!bookToDelete || bookToDelete.ownerId !== 1) return // only allow deleting your own
 
         deleteBook(id).then(() => {
             setMyBooks(myBooks.filter(book => book.id !== id))
