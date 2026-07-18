@@ -31,8 +31,11 @@ export const Book = ({ book, onDelete }) => {
                 <p className="book-author">{book.author}</p>
                 <p className="rating">Rating: {avgRating}</p>
             </Link>
-
-            {deleteButton}
+            
+            <div className="button-group">
+                <Link to={`/book/${book.id}/edit`}>Edit</Link>
+                {deleteButton}
+            </div>
         </article>
     )
 }

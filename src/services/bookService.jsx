@@ -19,3 +19,13 @@ export const deleteBook = (id) => {
         method: "DELETE"
     })
 }
+
+export const updateBook = (book) => {
+    return fetch(`http://localhost:8088/books/${book.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(book),
+    })
+}
