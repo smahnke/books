@@ -1,3 +1,4 @@
+import {useState, useEffect} from "react"
 import { AllBooks } from "../components/AllBooks"
 import { BookDetails } from "../books/bookDetails"
 import { MyBooks } from "../components/MyBooks"
@@ -12,7 +13,7 @@ export const ApplicationViews = () => {
         const bookUserObject=JSON.parse(localBookUser)
 
         setCurrentUser(bookUserObject)
-    })
+    }, [])
 
   return <>
     <Routes>

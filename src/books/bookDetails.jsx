@@ -12,10 +12,14 @@ export const BookDetails = () => {
 
     const {id} = useParams()
 
+    const loggedInUser = JSON.parse(
+        localStorage.getItem("book_user")
+    )
+
     const handleRating = () => {
         const newRating = {
             bookId: book.id,
-            userId: 1,
+            userId: loggedInUser.id,
             rating: selectedRating
         }
 
