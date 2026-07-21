@@ -29,3 +29,13 @@ export const updateBook = (book) => {
         body: JSON.stringify(book),
     })
 }
+
+export const addBook = (book) => {
+    return fetch(`http://localhost:8088/books`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(book)
+    }).then(res => res.json())
+}

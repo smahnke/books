@@ -46,9 +46,6 @@ export const Book = ({ book, onDelete, onEdit }) => {
             </Link>
             
             <div className="button-group">
-                {/* <button className="edit-btn">
-                    <Link to={`/book/${book.id}/edit`}>Edit</Link>
-                </button> */}
                 {editButton}
                 {deleteButton}
             </div>

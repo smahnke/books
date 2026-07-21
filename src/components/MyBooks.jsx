@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
-import { getMyBooks, deleteBook } from "../services/bookService"
+import { getMyBooks, deleteBook, addBook } from "../services/bookService"
 import { Book } from "../books/book"
+import { Link } from "react-router-dom"
 
 export const MyBooks = () => {
     const [myBooks, setMyBooks] = useState([])
@@ -18,6 +19,21 @@ export const MyBooks = () => {
         })
     }
 
+    const handleAdd = () => {
+        const newBook = {
+                    id: book.id,
+                    title: book.title,
+                    author: book.author,
+                    image: book.image,
+                    ownerId: loggedInUser.id,
+                }
+        
+        addBook(newBook)
+            .then((addedBook) => {
+                setMyBooks(addedBook)
+            })
+    }
+
     useEffect(() => {
         getMyBooks(loggedInUser.id).then((myBooksArray) => {
             setMyBooks(myBooksArray)
@@ -27,6 +43,11 @@ export const MyBooks = () => {
     return (
         <div className="app-container">
             <h2 className="page-header">My Books</h2>
+            <div className="button-group">
+                <Link to="/book/add" className="add-btn">
+                    Add
+                </Link>
+            </div>
             <div className="book-grid">
                 {myBooks.map((bookObj) => (
                     <Book key={bookObj.id} book={bookObj} onDelete={handleDelete} onEdit={true}/>
