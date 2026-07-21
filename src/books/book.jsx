@@ -1,7 +1,7 @@
 import "./book.css"
 import { Link } from "react-router-dom"
 
-export const Book = ({ book, onDelete }) => {
+export const Book = ({ book, onDelete, onEdit }) => {
     const avgRating = book.ratings.length > 0
         ? (book.ratings.reduce((sum, r) => sum + r.rating, 0) / book.ratings.length).toFixed(1)
         : "No ratings"
@@ -23,6 +23,19 @@ export const Book = ({ book, onDelete }) => {
         )
     }
 
+    let editButton = null
+    if (onEdit !==undefined) {
+        editButton = (
+            <div className="button-group">
+                <button className="edit-btn">
+                    <Link to={`/book/${book.id}/edit`}>
+                        Edit
+                    </Link>
+                </button>
+            </div>
+        )
+    }
+
     return (
         <article className="book-card">
             <Link to={`/book/${book.id}`} className="book-link">
@@ -33,7 +46,10 @@ export const Book = ({ book, onDelete }) => {
             </Link>
             
             <div className="button-group">
-                <Link to={`/book/${book.id}/edit`}>Edit</Link>
+                {/* <button className="edit-btn">
+                    <Link to={`/book/${book.id}/edit`}>Edit</Link>
+                </button> */}
+                {editButton}
                 {deleteButton}
             </div>
         </article>

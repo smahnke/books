@@ -29,7 +29,7 @@ export const MyBooks = () => {
             <h2 className="page-header">My Books</h2>
             <div className="book-grid">
                 {myBooks.map((bookObj) => (
-                    <Book key={bookObj.id} book={bookObj} onDelete={handleDelete} />
+                    <Book key={bookObj.id} book={bookObj} onDelete={handleDelete} onEdit={true}/>
                 ))}
             </div>
         </div>

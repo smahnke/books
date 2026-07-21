@@ -10,11 +10,10 @@ export const BookForm = ({currentBook}) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        getBookById(id).then((data) => {
-            const bookObj = data[0]
+        getBookById(id).then((bookObj) => {
             setBook(bookObj)
         })
-    }, [currentBook])
+    }, [id])
 
     const handleSave = (event) => {
         event.preventDefault()
