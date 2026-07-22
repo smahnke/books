@@ -5,6 +5,7 @@ import { MyBooks } from "../components/MyBooks"
 import { NavBar } from "../components/Nav/NavBar"
 import { BookForm } from "../books/bookForm"
 import { Route, Routes, Outlet } from "react-router-dom"
+import { AddForm } from "../books/addForm"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
@@ -31,7 +32,8 @@ export const ApplicationViews = () => {
             </Route>
                 <Route path="book/:id" element={<BookDetails />} />
             <Route path="mybooks" element={<MyBooks/>}/>
-            <Route path="/book/:id/edit" element={<BookForm />}/>
+                <Route path="book/add" element={<AddForm/>}/>
+            <Route path="book/:id/edit" element={<BookForm />}/>
         </Route>
     </Routes>
     </>

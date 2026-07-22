@@ -113,6 +113,13 @@ button{
     color:white;
 }
 
+.add-btn{
+
+    background:#D9534F;
+
+    color:white;
+}
+
 button:hover{
 
     opacity:.85;
